@@ -10,15 +10,11 @@ db.authenticate()
   .then(() => {
     console.log(`connected to ${db.config.database} successfully!`)
 
-    calculateCargo(Sequelize, db, 101)
+    //You can adjust deci and price in here
+    calculateCargo(Sequelize, db, 245, 175)
   }
   )
   .catch((err) =>
     console.log(`unable to connect ${db.config.database}!`, err.message)
   );
-// db.sync({ force: false })
-//   // .then(() => console.log(`synced ${db.config.database} successfully!`))
-//   .catch((err) =>
-//     console.log(`unable to sync ${db.config.database}!`, err.message)
-//   );
 
