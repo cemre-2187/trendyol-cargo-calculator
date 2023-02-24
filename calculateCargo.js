@@ -47,6 +47,11 @@ const calculateCargo = async (Sequelize, db, desi, basketTotal) => {
     cargoPricesForProduct["sendeo"] = (desi >= 100) ? sendeo + 1450 : sendeo
   }
 
+  //add KDV with loop
+  Object.keys(cargoPricesForProduct).forEach(function (key, index) {
+    cargoPricesForProduct[key] = Math.round(cargoPricesForProduct[key] * 1.18 * 100) / 100;
+  });
+
   console.log(cargoPricesForProduct)
 
 }

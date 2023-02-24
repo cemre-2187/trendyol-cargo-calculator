@@ -11,7 +11,7 @@ db.authenticate()
     console.log(`connected to ${db.config.database} successfully!`)
 
     //You can adjust deci and price in here
-    calculateCargo(Sequelize, db, 245, 175)
+    calculateCargo(Sequelize, db, 0, 175)
   }
   )
   .catch((err) =>
